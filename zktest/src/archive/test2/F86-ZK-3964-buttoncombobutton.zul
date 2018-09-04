@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F86-ZK-3964-windowpanel.zul
+
+	Purpose:
+		
+	Description:
+		
+	History:
+		Tue Aug 07 15:49:53 CST 2018, Created by rudyhuang
+
+Copyright (C) 2018 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+    <label>The Theme Demo - Button/Combobutton</label>
+    <hlayout>
+        <vlayout>
+            <combobutton iconSclass="z-icon-volume-up" label="Combobutton Popup">
+                <popup>
+                    popup
+                </popup>
+            </combobutton>
+            <combobutton iconSclass="z-icon-volume-up" label="Combobtn Menupopup">
+                <menupopup>
+                    <menuitem label="Index"/>
+                    <menu label="About">
+                        <menupopup>
+                            <menuitem label="About ZK"/>
+                            <menuitem label="About Potix"/>
+                        </menupopup>
+                    </menu>
+                </menupopup>
+            </combobutton>
+            <combobutton iconSclass="z-icon-volume-up" label="Disabled Combobutton" disabled="true">
+                <popup>
+                    popup
+                </popup>
+            </combobutton>
+        </vlayout>
+        <vlayout>
+            <button>Button</button>
+            <button disabled="true">Button</button>
+            <button iconSclass="z-icon-volume-up" >Button</button>
+            <button iconSclass="z-icon-volume-up" disabled="true">Button</button>
+            <button label="Large Button" width="100px" height="50px" orient="vertical"
+                    dir="reverse" />
+        </vlayout>
+        <vlayout style="background-color:gray;">
+            <checkbox mold="switch" ></checkbox>
+        </vlayout>
+    </hlayout>
+</zk>

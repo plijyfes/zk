@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F86-ZK-3964-mesh.zul
+
+        Purpose:
+                
+        Description:
+                
+        History:
+                Wed Sep 12 15:06:15 CST 2018, Created by leon
+
+Copyright (C) 2018 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+    <grid>
+        <columns>
+            <column>
+                <checkbox label="check"></checkbox>
+            </column>
+
+        </columns>
+        <rows>
+            <row>
+                <checkbox label="ccc"></checkbox>
+            </row>
+
+        </rows>
+    </grid>
+</zk>

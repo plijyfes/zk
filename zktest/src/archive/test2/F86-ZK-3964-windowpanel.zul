@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F86-ZK-3964-windowpanel.zul
+
+	Purpose:
+		
+	Description:
+		
+	History:
+		Tue Aug 07 15:49:53 CST 2018, Created by rudyhuang
+
+Copyright (C) 2018 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+    <label>The Theme Demo - Window/Panel</label>
+    <hlayout>
+        <vlayout>
+            <window title="Window" width="300px" height="200px" border="normal"
+                    maximizable="true" minimizable="true" closable="true">
+                Window Content
+            </window>
+
+            <window width="300px" height="200px" border="normal">
+                Window/NoHeader
+            </window>
+
+            <window title="Window/NoBorder" width="300px" height="200px" border="none"
+                    maximizable="true" minimizable="true" closable="true">
+                Window Content
+            </window>
+
+            <window width="300px" height="200px" border="none">
+                Window/NoBorder/NoHeader
+            </window>
+        </vlayout>
+        <vlayout>
+            <panel title="Panel" width="300px" height="200px" border="normal"
+                    maximizable="true" minimizable="true" closable="true" collapsible="true">
+                <panelchildren>
+                    Panel Content
+                </panelchildren>
+            </panel>
+
+            <panel width="300px" height="200px" border="normal">
+                <panelchildren>
+                    Panel/NoHeader
+                </panelchildren>
+            </panel>
+
+            <panel title="Panel/NoBorder" width="300px" height="200px" border="none"
+                    maximizable="true" minimizable="true" closable="true">
+                <panelchildren>
+                    Panel Content
+                </panelchildren>
+            </panel>
+
+            <panel width="300px" height="200px" border="none">
+                <panelchildren>
+                    Panel/NoBorder/NoHeader
+                </panelchildren>
+            </panel>
+        </vlayout>
+    </hlayout>
+</zk>

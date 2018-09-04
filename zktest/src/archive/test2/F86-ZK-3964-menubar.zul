@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F86-ZK-3964-menubar.zul
+
+        Purpose:
+                
+        Description:
+                
+        History:
+                Mon Sep 03 15:43:40 CST 2018, Created by leon
+
+Copyright (C) 2018 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+    <label>narrow theme menubar</label>
+    <menubar width="530px">
+        <menuitem iconSclass="z-icon-chevron-left" />
+        <menu iconSclass="z-icon-volume-up" label="Menu">
+            <menupopup>
+                <menu iconSclass="z-icon-volume-up" label="Menu">
+                    <menupopup>
+                        <menuitem label="test" />
+                    </menupopup>
+                </menu>
+                <menuseparator />
+                <menu iconSclass="z-icon-volume-up" label="Menu" />
+                <menu iconSclass="z-icon-volume-up" />
+                <menuitem label="Menu" />
+                <menuitem iconSclass="z-icon-volume-up" label="Menu" />
+            </menupopup>
+        </menu>
+        <menuseparator />
+        <menu iconSclass="z-icon-volume-up" label="Menu" />
+        <menu iconSclass="z-icon-volume-up" />
+        <menuitem label="Menu" />
+        <menuitem iconSclass="z-icon-volume-up" label="Menu" />
+        <menuitem iconSclass="z-icon-chevron-right" />
+    </menubar>
+    <label>narrow theme toolbar</label>
+    <toolbar>
+        <label>label</label>
+        <button label="Button" />
+        <toolbarbutton label="toolbarbutton" />
+    </toolbar>
+    <label>toolbar in tabbox</label>
+    <tabbox width="450px" height="200px" >
+        <tabs>
+            <tab label="Tab 1" />
+            <tab label="Tab 2" />
+        </tabs>
+        <toolbar>
+            <toolbarbutton label="Button1" />
+            <button label="Button2" />
+        </toolbar>
+        <tabpanels>
+            <tabpanel>This is panel 1</tabpanel>
+            <tabpanel>This is panel 2 </tabpanel>
+        </tabpanels>
+    </tabbox>
+    <label>toolbar in groupbox</label>
+    <groupbox width="260px" height="110px" mold="3d">
+        <caption>
+            <toolbarbutton iconSclass="z-icon-volume-up" label="Caption" />
+            <button label="Button"/>
+        </caption>
+        <hbox>
+            Groupbox Content
+        </hbox>
+    </groupbox>
+    <groupbox width="260px" height="110px">
+        <caption>
+            <toolbarbutton iconSclass="z-icon-volume-up" label="Caption" />
+            <button label="Button"/>
+        </caption>
+        <hbox>
+            Groupbox Content
+        </hbox>
+    </groupbox>
+    <groupbox width="260px" height="110px">
+        <caption>
+            <label>
+                Caption
+            </label>
+        </caption>
+        <hbox>
+            Groupbox Content
+        </hbox>
+    </groupbox>
+</zk>

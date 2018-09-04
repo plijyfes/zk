@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F86-ZK-3964-navbar.zul
+
+        Purpose:
+                
+        Description:
+                
+        History:
+                Tue Sep 11 11:25:05 CST 2018, Created by leon
+
+Copyright (C) 2018 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+    <label>navbar-v</label>
+    <navbar orient="vertical" width="190px">
+        <navitem label="Home" iconSclass="z-icon-home" />
+        <nav label="Get Started" iconSclass="z-icon-th-list" badgeText="3">
+            <navitem label="Step One" />
+            <navitem label="Step Two" />
+            <navitem label="Step Three" />
+        </nav>
+        <navitem label="About" iconSclass="z-icon-flag" />
+        <navseparator />
+        <navitem label="Contact" iconSclass="z-icon-envelope"/>
+    </navbar>
+    <label>navbar-v collapsed</label>
+    <navbar collapsed="true" orient="vertical" width="70px" >
+        <navitem label="Home" iconSclass="z-icon-home" />
+        <nav label="Get Started" iconSclass="z-icon-th-list" badgeText="3">
+            <navitem label="Step One" />
+            <navitem label="Step Two" />
+            <nav label="Step Three" iconSclass="z-icon-th-list" >
+                <navitem label="Step 3-1" />
+                <navitem label="Step 3-2" />
+                <navitem label="Step 3-3" />
+            </nav>
+        </nav>
+        <navitem label="About" iconSclass="z-icon-flag" />
+        <navseparator />
+        <navitem label="Contact" iconSclass="z-icon-envelope"/>
+    </navbar>
+    <label>navbar-h</label>
+    <navbar orient="horizontal">
+        <navitem label="Home" iconSclass="z-icon-home" />
+        <nav label="Get Started" iconSclass="z-icon-th-list" badgeText="3">
+            <navitem label="Step One" />
+            <navitem label="Step Two" />
+            <navitem label="Step Three" />
+        </nav>
+        <navitem label="About" iconSclass="z-icon-flag" />
+        <navseparator />
+        <navitem label="Contact" iconSclass="z-icon-envelope"/>
+    </navbar>
+    <label>navbar-h collapsed</label>
+    <navbar collapsed="true" orient="horizontal">
+        <navitem label="Home" iconSclass="z-icon-home" />
+        <nav label="Get Started" iconSclass="z-icon-th-list" badgeText="3">
+            <navitem label="Step One" />
+            <navitem label="Step Two" />
+            <nav label="Step Three">
+                <navitem label="Step 3-1" />
+                <navitem label="Step 3-2" />
+                <navitem label="Step 3-3" />
+            </nav>
+        </nav>
+        <navitem label="About" iconSclass="z-icon-flag" />
+        <navseparator />
+        <navitem label="Contact" iconSclass="z-icon-envelope"/>
+    </navbar>
+</zk>
