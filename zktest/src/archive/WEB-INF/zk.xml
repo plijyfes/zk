@@ -369,15 +369,15 @@ Copyright (C) 2006 Potix Corporation. All Rights Reserved.
 	</richlet-mapping>
 
 	<!-- Uncomment if you want to embed JavaScript codes and any other
-	tags to be generated inside HTML HEAD.
+	tags to be generated inside HTML HEAD.	-->
 	<device-config>
 		<device-type>ajax</device-type>
 		<embed><![CDATA[
-	<script type="text/javascript">
-	</script>
+<script type="text/javascript" src="http://localhost:50000/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="http://localhost:50000/zklessLiveReloadStyles.js"></script>
 		]]></embed>
 	</device-config>
-	-->
+
 
 	<!-- Optional -->
 	<!-- the following listener is used to see # of sessions, desktops...
