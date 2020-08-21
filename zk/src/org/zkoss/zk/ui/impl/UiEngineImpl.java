@@ -16,6 +16,10 @@ Copyright (C) 2005 Potix Corporation. All Rights Reserved.
 */
 package org.zkoss.zk.ui.impl;
 
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toSet;
+
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Collection;
@@ -1351,6 +1355,7 @@ public class UiEngineImpl implements UiEngine {
 				responses.addAll(0, prs);
 
 			out.writeResponseId(desktopCtrl.getResponseId(true));
+			invokeDidUpdate(responses);
 			out.write(mergeResponses(responses));
 
 			//			if (log.isDebugEnabled())
@@ -1397,6 +1402,16 @@ public class UiEngineImpl implements UiEngine {
 			if (pfmeter != null && doneReqIds != null)
 				meterAuServerComplete(pfmeter, doneReqIds, exec);
 		}
+	}
+
+	private void invokeDidUpdate(List<AuResponse> mergeResponses) {
+		mergeResponses.stream()
+			.filter(AuSetAttribute.class::isInstance)
+			.map(AuSetAttribute.class::cast)
+			.filter(p -> p.getDepends() instanceof ComponentCtrl)
+			.collect(groupingBy(AuResponse::getDepends,
+					mapping(AuSetAttribute::getAttributeName, toSet())))
+			.forEach((p, v) -> ((ComponentCtrl) p).didUpdate(v));
 	}
 
 	private List<AuResponse> mergeResponses(List<AuResponse> responses) {

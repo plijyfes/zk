@@ -17,13 +17,12 @@ package org.zkoss.zul;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.zkoss.lang.Objects;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.sys.BooleanPropertyAccess;
 import org.zkoss.zk.ui.sys.IntPropertyAccess;
 import org.zkoss.zk.ui.sys.PropertyAccess;
 import org.zkoss.zk.ui.sys.StringPropertyAccess;
-import org.zkoss.zul.impl.XulElement;
+import org.zkoss.zul.impl.AbstractStateComponent;
 
 /**
  * A label.
@@ -32,8 +31,7 @@ import org.zkoss.zul.impl.XulElement;
  *
  * @author tomyeh
  */
-public class Label extends XulElement {
-	private String _value = "";
+public class Label extends AbstractStateComponent {
 	private AuxInfo _auxinf;
 
 	public Label() {
@@ -49,7 +47,7 @@ public class Label extends XulElement {
 	 * other than null.
 	 */
 	public String getValue() {
-		return _value;
+		return getState("value");
 	}
 
 	/** Sets the value.
@@ -57,11 +55,9 @@ public class Label extends XulElement {
 	public void setValue(String value) {
 		if (value == null)
 			value = "";
-		if (!Objects.equals(_value, value)) {
-			_value = value;
-			smartUpdate("value", getValue());
-			//allow deriving to override getValue()
-		}
+		setState("value", value);
+		setState("value", getValue());
+		//allow deriving to override getValue()
 	}
 
 	/** Returns the maximal length of the label.
@@ -78,7 +74,7 @@ public class Label extends XulElement {
 			maxlength = 0;
 		if ((_auxinf != null ? _auxinf.maxlength : 0) != maxlength) {
 			initAuxInfo().maxlength = maxlength;
-			smartUpdate("maxlength", getMaxlength());
+			setState("maxlength", getMaxlength());
 		}
 	}
 
@@ -95,7 +91,7 @@ public class Label extends XulElement {
 	public void setMultiline(boolean multiline) {
 		if ((_auxinf != null && _auxinf.multiline) != multiline) {
 			initAuxInfo().multiline = multiline;
-			smartUpdate("multiline", isMultiline());
+			setState("multiline", isMultiline());
 		}
 	}
 
@@ -120,7 +116,7 @@ public class Label extends XulElement {
 	public void setPre(boolean pre) {
 		if ((_auxinf != null && _auxinf.pre) != pre) {
 			initAuxInfo().pre = pre;
-			smartUpdate("pre", isPre());
+			setState("pre", isPre());
 		}
 	}
 
@@ -180,20 +176,10 @@ public class Label extends XulElement {
 		return super.getPropertyAccess(prop);
 	}
 
-	//super//
-	protected void renderProperties(org.zkoss.zk.ui.sys.ContentRenderer renderer) throws IOException {
-		super.renderProperties(renderer);
-
-		int v = getMaxlength();
-		if (v > 0)
-			renderer.render("maxlength", v);
-		render(renderer, "multiline", isMultiline());
-		render(renderer, "pre", isPre());
-
-		final String val = getValue();
-		//allow deriving to override getValue()
-		render(renderer, "value", val);
-		org.zkoss.zul.impl.Utils.renderCrawlableText(val);
+	@Override
+	public void propsReady() throws IOException {
+		super.propsReady();
+		org.zkoss.zul.impl.Utils.renderCrawlableText(getValue());
 	}
 
 	public String getZclass() {

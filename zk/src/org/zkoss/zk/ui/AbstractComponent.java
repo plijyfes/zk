@@ -2268,6 +2268,14 @@ public class AbstractComponent implements Component, ComponentCtrl, java.io.Seri
 		}
 	}
 
+	@Override
+	public void propsReady() throws IOException {
+	}
+
+	@Override
+	public void didUpdate(Set<String> attrs) {
+	}
+
 	/** Called by ({@link ComponentCtrl#redraw}) to render the
 	 * properties, excluding the enclosing tag and children.
 	 *
@@ -2280,6 +2288,7 @@ public class AbstractComponent implements Component, ComponentCtrl, java.io.Seri
 	 * @since 5.0.0
 	 */
 	protected void renderProperties(ContentRenderer renderer) throws IOException {
+		propsReady();
 		render(renderer, "id", _id);
 		if (_auxinf != null && !_auxinf.visible) //don't call isVisible since it might be overriden (backward compatible)
 			renderer.render("visible", false);

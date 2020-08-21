@@ -29,6 +29,8 @@ import org.zkoss.zk.ui.Component;
  * @since 3.0.0
  */
 public class AuSetAttribute extends AuResponse {
+	protected String attributeName;
+
 	/** Construct an instance for miscellaneous values, such as Boolean,
 	 * Integer and so on.
 	 * @param val the value. It could be null, String, Date,
@@ -40,5 +42,15 @@ public class AuSetAttribute extends AuResponse {
 	 */
 	public AuSetAttribute(Component comp, String attr, Object val) {
 		super("setAttr", comp, new Object[] { comp, attr, val });
+		attributeName = attr;
+	}
+
+	/**
+	 * Returns the attribute name.
+	 * @return attribute name
+	 * @since 9.1.0
+	 */
+	public String getAttributeName() {
+		return attributeName;
 	}
 }

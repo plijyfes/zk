@@ -746,13 +746,21 @@ new zul.wnd.Window({
 				if (props && typeof props == 'object' && !props.$oid)
 					for (var nm in props)
 						this.set(nm, props[nm]);
+				this.propsReady_();
 
 				if ((zk.spaceless || this.rawId) && this.id)
 					this.uuid = this.id; //setId was called
 				if (!this.uuid)
 					this.uuid = Widget.nextUuid();
 			});
+		else
+			this.propsReady_();
 	},
+	/**
+	 * A method called after all initial properties are ready.
+	 * @since 9.1.0
+	 */
+	propsReady_: zk.$void,
 
 	$define: {
 		/** Sets this widget's mold. A mold is a template to render a widget.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F91-ZK-state.zul
+
+	Purpose:
+		
+	Description:
+		
+	History:
+		Mon Mar 23 15:16:16 CST 2020, Created by rudyhuang
+
+Copyright (C) 2020 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+    <label id="lbl" multiline="true">
+        Rose is red,
+        Violet is blue.
+        Believe in Getter,
+        Stoner sunshine.
+    </label>
+    <button label="setValue" onClick='lbl.setValue(new Date().toString() + "\nyo!")'/>
+    <button label="invalidate" onClick="lbl.invalidate()"/>
+</zk>

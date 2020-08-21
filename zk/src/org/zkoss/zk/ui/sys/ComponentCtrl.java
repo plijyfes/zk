@@ -652,4 +652,18 @@ public interface ComponentCtrl {
 	 * @since 9.0.1
 	 */
 	public void invalidatePartial();
+
+	/**
+	 * Called while all initial properties are ready (before rendering)
+	 * @since 9.1.0
+	 */
+	public void propsReady() throws IOException;
+
+	/**
+	 * Called while update is performed. Won't be called at first rendering time (including invalidated).
+	 * Notice: You can't modify UI since the UI Visualizer is finished rendering responses.
+	 * @param attrs updated attribute names
+	 * @since 9.1.0
+	 */
+	public void didUpdate(Set<String> attrs);
 }
